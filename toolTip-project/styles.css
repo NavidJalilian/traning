@@ -1,0 +1,46 @@
+h2 {
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 3rem;
+  position: relative;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+h2:hover {
+  border-bottom: 3px solid red;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+h2[data-text]:hover:before {
+  content: attr(data-text);
+  background-color: grey;
+  font-size: 2rem;
+  position: absolute;
+
+  transform: translate(40%, calc(-100% - 2rem));
+  border-radius: 5px;
+  padding: 1rem;
+  width: 100%;
+  width: max-content;
+}
+h2[data-text]:hover::after {
+  content: "";
+  position: absolute;
+
+  border: 2rem solid transparent;
+  border-top-color: grey;
+  transform: translate(-100%, -55%);
+  left: 50%;
+}
