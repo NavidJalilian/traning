@@ -1,0 +1,79 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  --color-primmary: rgb(225, 220, 220);
+  --color-white: rgb(237, 236, 235);
+  --f-larg: 1.5rem;
+}
+body {
+  background-color: var(--color-primmary);
+}
+form {
+  margin: 0 auto;
+  margin-top: 2rem;
+  background-color: var(--color-white);
+  font-size: var(--f-larg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 90vh;
+}
+.input-container {
+  width: 60%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  position: relative;
+  margin-top: 1rem;
+}
+input,
+label {
+  width: 80%;
+  height: 60%;
+  font-size: var(--f-larg);
+  letter-spacing: 2px;
+}
+input {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid black;
+}
+label {
+  position: absolute;
+  pointer-events: none;
+  bottom: 0px;
+  font-size: 2rem;
+}
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -6px;
+}
+input:focus {
+  border-color: blue;
+
+  transition: border-color 500ms ease;
+}
+input:focus + label {
+  color: blue;
+}
+button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  outline: 1px solid rgb(0, 0, 0);
+  border: none;
+  letter-spacing: 2px;
+  box-shadow: 3px 5px 5px black;
+}
+button:hover {
+  outline-color: blue;
+  color: blue;
+  box-shadow: 3px 5px 5px blue;
+  font-weight: bold;
+}
